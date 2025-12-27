@@ -197,3 +197,20 @@ h1 {
         justify-content: flex-end;
     }
 }
+
+/* 空状态提示 - 当没有任务时显示 */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #9ca3af;
+    display: none; /* 默认隐藏 */
+}
+
+.empty-state .empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.empty-state p {
+    font-size: 16px;
+}
