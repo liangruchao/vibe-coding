@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, Vibe Coding!</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        h1 {
-            color: blue;
-            font-size: 3rem;
-            text-align: center;
-        }
-    </style>
+    <title>我的待办清单</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello, Vibe Coding!</h1>
+    <div class="container">
+        <!-- 页面标题 -->
+        <h1>我的待办清单</h1>
+
+        <!-- 输入区域 - 用于添加新任务 -->
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="输入新任务..." />
+            <button id="addBtn">添加</button>
+        </div>
+
+        <!-- 任务列表区域 -->
+        <ul class="task-list">
+            <!-- 任务列表为空时会显示提示 -->
+        </ul>
+
+        <!-- 清空已完成按钮 - 批量删除已完成的任务 -->
+        <button class="clear-completed-btn">清空已完成</button>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

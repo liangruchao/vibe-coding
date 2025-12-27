@@ -1,0 +1,199 @@
+/* 全局样式 - 设置基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Microsoft YaHei", sans-serif;
+    background-color: #ffffff; /* 纯白背景 */
+    min-height: 100vh;
+    padding: 20px;
+    color: #1f2937;
+}
+
+/* 主容器 - 页面居中显示 */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff; /* 纯白背景 */
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); /* 更柔和的阴影 */
+    padding: 30px;
+}
+
+/* 页面标题 */
+h1 {
+    text-align: center;
+    color: #3b82f6; /* 蓝色主色调 */
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* 输入区域 - 添加新任务 */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* 输入框 */
+#taskInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb; /* 浅灰色边框 */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #3b82f6; /* 蓝色边框 */
+}
+
+/* 添加按钮 */
+#addBtn {
+    padding: 12px 24px;
+    background-color: #3b82f6; /* 蓝色主色调 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#addBtn:hover {
+    background-color: #2563eb; /* 悬停时深蓝色 */
+}
+
+/* 任务列表容器 */
+.task-list {
+    list-style: none;
+}
+
+/* 单个任务项 - 每一条任务（圆角卡片风格） */
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #ffffff; /* 纯白背景 */
+    border: 1px solid #e5e7eb; /* 浅灰色边框 */
+    border-radius: 12px; /* 更大的圆角 */
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 更轻柔的阴影 */
+    transition: all 0.2s ease;
+}
+
+.task-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 悬停时的阴影效果 */
+    border-color: #3b82f6; /* 悬停时显示蓝色边框 */
+}
+
+/* 任务内容 */
+.task-content {
+    flex: 1;
+    font-size: 16px;
+    color: #2d3748;
+    transition: all 0.3s ease; /* 添加过渡动画 */
+}
+
+/* 已完成任务的样式 */
+.task-content.completed {
+    text-decoration: line-through; /* 删除线 */
+    color: #9ca3af; /* 灰色文字 */
+}
+
+/* 操作按钮 - 完成和删除按钮 */
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* 按钮基础样式 */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* 完成按钮 */
+.complete-btn {
+    background-color: #3b82f6; /* 蓝色主色调 */
+    color: white;
+}
+
+.complete-btn:hover {
+    background-color: #2563eb; /* 悬停时深蓝色 */
+}
+
+/* 删除按钮 */
+.delete-btn {
+    background-color: #ef4444; /* 红色警示色 */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626; /* 悬停时深红色 */
+}
+
+/* 清空已完成按钮 - 批量删除已完成的任务 */
+.clear-completed-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f3f4f6; /* 浅灰色背景 */
+    color: #6b7280; /* 灰色文字 */
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 20px;
+    display: none; /* 默认隐藏 */
+}
+
+.clear-completed-btn:hover {
+    background-color: #e5e7eb; /* 悬停时稍深的灰色 */
+    color: #4b5563;
+}
+
+.clear-completed-btn.show {
+    display: block; /* 显示按钮 */
+}
+
+/* 响应式设计 - 手机端适配 */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #addBtn {
+        width: 100%;
+    }
+
+    .task-item {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
